@@ -6,12 +6,18 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   target_compile_definitions(hello-world PUBLIC   "IS_LINUX")  
 endif()  
 
+**CMake实现添加宏定义的方法不是在源代码中添加宏定义，而是使用编译器的选项来添加宏定义**  
+使用make VERBOSE=1即可查看详细输出，即红线处标记的 c++ -D IS_LINUX  
+编译器会在预处理阶段把这个宏定义添加上  
+![Alt text](image-2.2.png)
+
 ## 2.3 处理与编译器相关的源代码  
 target_compile_definitions(hello-world PUBLIC "COMPILER_NAME=\"\${CMAKE_CXX_COMPILER_ID}\"")  
 target_compile_definitions(hello-world
   PUBLIC "IS_${CMAKE_Fortran_COMPILER_ID}_FORTRAN_COMPILER"
 )  
-还是使用宏定义的方式告诉代码编译器类型  
+这里还是使用宏定义的方式告诉代码编译器类型：  
+![Alt text](image-2.3.png)
 ## 2.4 检测处理器体系结构  
 CMAKE_SIZEOF_VOID_P： 空指针大小，单位字节，8字节代表64位cpu  
 CMAKE_HOST_SYSTEM_PROCESSOR： 处理器架构  
@@ -38,4 +44,4 @@ include(CheckCXXCompilerFlag)
 set(_CXX_FLAGS "-march=native")  
 
 使用场景：  
-![Alt text](image.png)
+![Alt text](image-2.6.png)
