@@ -13,15 +13,16 @@ target_compile_definitions(hello-world
 )  
 还是使用宏定义的方式告诉代码编译器类型  
 ## 2.4 检测处理器体系结构  
-CMAKE_SIZEOF_VOID_P 空指针大小，单位字节，8字节代表64位cpu  
-CMAKE_HOST_SYSTEM_PROCESSOR 处理器架构  
+CMAKE_SIZEOF_VOID_P： 空指针大小，单位字节，8字节代表64位cpu  
+CMAKE_HOST_SYSTEM_PROCESSOR： 处理器架构  
 ## 2.5 检测处理器指令集
 这里使用生成config.h的方法，让cmake填充头文件的宏定义来告诉代码指令集类型    
 写一个config.h.in文件，然后使用@var@或\${var}格式解引用变量  
 第一步，查询需要变量的值：  
-cmake_host_system_information(RESULT _${key} QUERY ${key})  
-注意代码中含有一个下划线_
+cmake_host_system_information(RESULT \_${key} QUERY ${key})  
+注意代码中含有一个下划线_  
 这行代码的意思是查询**OS_NAME**的值，并且存储到_OS_NAME变量中，后面能与**config.h.in**对应上  
+
 第二步,通过config.h.in生成config.h文件：  
 configure_file(config.h.in config.h @ONLY)  
 @ONLY的作用是只识别@var@格式的变量进行替换  
@@ -35,3 +36,6 @@ check_cxx_compiler_flag()这个模块不是默认带的
 include(CheckCXXCompilerFlag)  
 接下来就可以根据需求进行操作了，例如添加编译的选项：  
 set(_CXX_FLAGS "-march=native")  
+
+使用场景：  
+![Alt text](image.png)
