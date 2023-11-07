@@ -93,19 +93,6 @@ int calculate(char op, ASTNode *lhs, ASTNode *rhs)
 
 int Current_token;
 int next_token() { return Current_token = get_token(); }
-// int next_token() 
-// { 
-//     Current_token = get_token();
-//     if(Current_token>2)
-//     {
-//         std::cout<<(char)Current_token<<std::endl;
-//     }
-//     else if(Current_token==2)
-//     {
-//         std::cout<<Numeric_Val<<std::endl;
-//     }
-//     return  Current_token;
-// }
 
 std::map<char, int> Operator_Precedence;
 // 获取op优先级
