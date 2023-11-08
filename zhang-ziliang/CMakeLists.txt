@@ -1,5 +1,7 @@
+cmake_minimum_required(VERSION 3.27)
 
 project(zhang-ziliang)
+
 find_package(GTest)
 if (NOT GTEST_FOUND)
     message(WARNING "GTEST not found, trying another way......")
@@ -14,6 +16,7 @@ if (NOT GTEST_FOUND)
 endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # TODO
 # add_subdirectory(CMake) 
