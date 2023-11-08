@@ -28,7 +28,7 @@ char getChar()
 
 int get_token()
 {
-    int LastChar = ' ';
+    static int LastChar = ' ';
 
     while (isspace(LastChar))
         LastChar = getChar();
@@ -46,7 +46,7 @@ int get_token()
             NumStr += LastChar;
             LastChar = getChar();
         } while (isdigit(LastChar));
-
+        
         Numeric_Val = strtod(NumStr.c_str(), 0);
         return NUMERIC_TOKEN;
     }

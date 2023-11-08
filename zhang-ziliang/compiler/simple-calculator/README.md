@@ -37,7 +37,15 @@ $ ./calculator
 q
 ```
 
-更新： 使用gtest进行测试  
+## TODO
+
+* 不要使用控制台输入，不利于测试
+* 利用之前学的cmake知识，把gtest库接进来写测试
+* "2*3"这种例子结果不对，还是测试的问题
+* 后面可以在学习llvm的同时一起补充IR的知识
+
+## UPDATE  
+使用gtest进行测试  
 gtest测试结果：  
 ```bash
 ./calculatorTest 
