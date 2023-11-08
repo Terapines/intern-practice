@@ -26,9 +26,11 @@ char getChar()
     return line[idx++];
 }
 
+int LastChar;
 int get_token()
 {
-    static int LastChar = ' ';
+    // static int LastChar = ' ';
+    // int LastChar = ' ';
 
     while (isspace(LastChar))
         LastChar = getChar();
@@ -202,6 +204,7 @@ void init_precedence()
 
 int calculate(std::string str)
 {
+    LastChar = ' ';
     init_precedence();
     line=str;
     idx=0;
