@@ -17,14 +17,11 @@ target_link_libraries(calculator lib_calculate)
 # 添加可执行文件
 add_executable(calculatorTest test.cpp)
 
-# 添加gtest库的链接
-find_package(GTest REQUIRED)
 target_link_libraries(
     calculatorTest
 PRIVATE
 lib_calculate 
-GTest::GTest 
-GTest::Main
+GTest::gtest_main
 )
 
 # 启用CTest
