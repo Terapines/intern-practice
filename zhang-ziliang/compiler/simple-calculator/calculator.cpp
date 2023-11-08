@@ -1,10 +1,12 @@
+#include"calculator.hpp"
 #include <iostream>
 #include <cctype>
 #include <cstdio>
 #include <map>
 #include <string>
 #include <vector>
-
+namespace
+{
 enum Token_Type
 {
     EOF_TOKEN = 0,
@@ -65,7 +67,7 @@ public:
     ASTNode(int val) : m_val(val) {}
 };
 
-int calculate(char op, ASTNode *lhs, ASTNode *rhs)
+int cal(char op, ASTNode *lhs, ASTNode *rhs)
 {
     switch (op)
     {
@@ -174,7 +176,7 @@ ASTNode *binary_op_parser(int Old_Prec, ASTNode *LHS)
         }
         // 合并左右子树，继续往后解析
         //  LHS = new BinaryAST(std::to_string(BinOp), LHS, RHS);
-        LHS = new ASTNode(calculate(BinOp, LHS, RHS));
+        LHS = new ASTNode(cal(BinOp, LHS, RHS));
     }
 }
 
@@ -196,31 +198,48 @@ void init_precedence()
     Operator_Precedence['*'] = 4;
     Operator_Precedence['%'] = 5;
 }
-
-void mainLoop()
-{
-    while (1)
-    {
-        std::getline(std::cin,line);
-        if(line=="q") return;
-        idx = 0;
-        next_token();
-        auto node = expression_parser();
-        if(node)
-        {
-            int ans = node->m_val;
-        std::cout << ans << std::endl;
-        }
-        else
-        {
-            std::cout << "syntax error!" << std::endl;
-        }
-    }
 }
 
-int main(int argc, char *argv[])
+int calculate(std::string str)
 {
     init_precedence();
-    mainLoop();
-    return 0;
+    line=str;
+    idx=0;
+    next_token();
+    auto node = expression_parser();
+    if(node)
+    {
+        return node->m_val;
+    }
+    throw std::invalid_argument("表达式格式错误！");
 }
+
+
+
+// void mainLoop()
+// {
+//     while (1)
+//     {
+//         std::getline(std::cin,line);
+//         if(line=="q") return;
+//         idx = 0;
+//         next_token();
+//         auto node = expression_parser();
+//         if(node)
+//         {
+//             int ans = node->m_val;
+//         std::cout << ans << std::endl;
+//         }
+//         else
+//         {
+//             std::cout << "syntax error!" << std::endl;
+//         }
+//     }
+// }
+
+// int main(int argc, char *argv[])
+// {
+//     init_precedence();
+//     mainLoop();
+//     return 0;
+// }
