@@ -1,0 +1,1 @@
+add_library(codegen STATIC codegen.cpp)
