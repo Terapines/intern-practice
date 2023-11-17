@@ -29,7 +29,6 @@ static std::unique_ptr<IRBuilder<>> Builder;
 static ExitOnError ExitOnErr;
 
 static std::map<std::string, AllocaInst *> NamedValues;
-static std::unique_ptr<KaleidoscopeJIT> TheJIT;
 static std::map<std::string, std::unique_ptr<PrototypeAST>> FunctionProtos;
 
 //===----------------------------------------------------------------------===//

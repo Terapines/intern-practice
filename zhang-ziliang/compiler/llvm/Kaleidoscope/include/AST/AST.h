@@ -18,12 +18,11 @@
 #include <vector>
 
 using namespace llvm;
-using namespace llvm::orc;
 
 //===----------------------------------------------------------------------===//
 // Abstract Syntax Tree (aka Parse Tree)
 //===----------------------------------------------------------------------===//
-namespace {
+
 
 raw_ostream &indent(raw_ostream &O, int size) ;
 
@@ -170,4 +169,3 @@ public:
   Function *codegen();
   raw_ostream &dump(raw_ostream &out, int ind) ;
 };
-} // end anonymous namespace

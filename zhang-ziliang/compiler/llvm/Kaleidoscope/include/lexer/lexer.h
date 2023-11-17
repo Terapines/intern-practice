@@ -1,8 +1,7 @@
-#include "../JIT/KaleidoscopeJIT.h"
-#include "llvm/ADT/STLExtras.h"
-#include "llvm/Analysis/BasicAliasAnalysis.h"
+// #include "llvm/ADT/STLExtras.h"
+// #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
-#include "llvm/IR/DIBuilder.h"
+// #include "llvm/IR/DIBuilder.h"
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/LLVMContext.h"
 #include "llvm/IR/LegacyPassManager.h"
@@ -18,7 +17,6 @@
 #include <vector>
 
 using namespace llvm;
-using namespace llvm::orc;
 
 //===----------------------------------------------------------------------===//
 // Lexer

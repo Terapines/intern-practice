@@ -1,4 +1,4 @@
-#include "../include/AST/AST.h"
+#include "AST/AST.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
@@ -18,7 +18,6 @@
 #include <vector>
 
 using namespace llvm;
-using namespace llvm::orc;
 
 //===----------------------------------------------------------------------===//
 // Abstract Syntax Tree (aka Parse Tree)

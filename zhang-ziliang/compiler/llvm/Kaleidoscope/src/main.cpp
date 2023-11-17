@@ -8,8 +8,6 @@ static void InitializeModule() {
   // Open a new module.
   TheContext = std::make_unique<LLVMContext>();
   TheModule = std::make_unique<Module>("my cool jit", *TheContext);
-  TheModule->setDataLayout(TheJIT->getDataLayout());
-
   Builder = std::make_unique<IRBuilder<>>(*TheContext);
 }
 
@@ -111,7 +109,6 @@ int main() {
   // Prime the first token.
   getNextToken();
 
-  TheJIT = ExitOnErr(KaleidoscopeJIT::Create());
 
   InitializeModule();
 
