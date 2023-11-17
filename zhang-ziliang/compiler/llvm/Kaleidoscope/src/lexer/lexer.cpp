@@ -1,4 +1,4 @@
-#include "../include/lexer/lexer.h"
+#include "lexer/lexer.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"

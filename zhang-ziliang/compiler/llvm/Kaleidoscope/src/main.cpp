@@ -1,4 +1,4 @@
-#include "../include/codegen/codegen.h"
+#include "codegen/codegen.h"
 
 //===----------------------------------------------------------------------===//
 // Top-Level parsing and JIT Driver
