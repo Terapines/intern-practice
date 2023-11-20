@@ -22,7 +22,7 @@ using namespace llvm;
 //===----------------------------------------------------------------------===//
 // Abstract Syntax Tree (aka Parse Tree)
 //===----------------------------------------------------------------------===//
-namespace {
+// namespace {
 
 raw_ostream &indent(raw_ostream &O, int size) {
   return O << std::string(size, ' ');
@@ -30,7 +30,7 @@ raw_ostream &indent(raw_ostream &O, int size) {
 
 /// ExprAST - Base class for all expression nodes.
 
-  ExprAST::ExprAST(SourceLocation Loc = CurLoc) : Loc(Loc) {}
+  ExprAST::ExprAST(SourceLocation Loc) : Loc(Loc) {}
   ExprAST::~ExprAST() {}
   int ExprAST::getLine() const { return Loc.Line; }
   int ExprAST::getCol() const { return Loc.Col; }
@@ -174,4 +174,4 @@ raw_ostream &BinaryExprAST::dump(raw_ostream &out, int ind) {
     indent(out, ind) << "Body:";
     return Body ? Body->dump(out, ind) : out << "null\n";
   }
-} // end anonymous namespace
+// } // end anonymous namespace

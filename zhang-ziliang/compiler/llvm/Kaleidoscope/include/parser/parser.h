@@ -17,6 +17,8 @@
 #include <string>
 #include <vector>
 
+#ifndef _PARSER_H
+#define _PARSER_H
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//
@@ -102,3 +104,5 @@ std::unique_ptr<FunctionAST> ParseTopLevelExpr() ;
 
 /// external ::= 'extern' prototype
 std::unique_ptr<PrototypeAST> ParseExtern() ;
+
+#endif

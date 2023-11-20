@@ -1,7 +1,8 @@
-// #include "llvm/ADT/STLExtras.h"
-// #include "llvm/Analysis/BasicAliasAnalysis.h"
+#include <iostream>
+#include "llvm/ADT/STLExtras.h"
+#include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
-// #include "llvm/IR/DIBuilder.h"
+#include "llvm/IR/DIBuilder.h"
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/LLVMContext.h"
 #include "llvm/IR/LegacyPassManager.h"
@@ -15,7 +16,8 @@
 #include <map>
 #include <string>
 #include <vector>
-
+#ifndef _LEXER_H
+#define _LEXER_H
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//
@@ -52,10 +54,10 @@ enum Token {
 
 std::string getTokName(int Tok) ;
 
-namespace {
+
 class PrototypeAST;
 class ExprAST;
-}
+
 
 struct DebugInfo {
   DICompileUnit *TheCU;
@@ -64,7 +66,7 @@ struct DebugInfo {
 
   void emitLocation(ExprAST *AST);
   DIType *getDoubleTy();
-} KSDbgInfo;
+} static KSDbgInfo;
 
 struct SourceLocation {
   int Line;
@@ -79,4 +81,6 @@ static std::string IdentifierStr; // Filled in if tok_identifier
 static double NumVal;             // Filled in if tok_number
 
 /// gettok - Return the next token from standard input.
-static int gettok() ;
+int gettok() ;
+
+#endif

@@ -68,7 +68,7 @@ static int advance() {
 }
 
 /// gettok - Return the next token from standard input.
-static int gettok() {
+int gettok() {
   static int LastChar = ' ';
 
   // Skip any whitespace.

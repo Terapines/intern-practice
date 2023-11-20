@@ -16,7 +16,8 @@
 #include <map>
 #include <string>
 #include <vector>
-
+#ifndef _CODEGEN_H
+#define _CODEGEN_H
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//
@@ -38,3 +39,5 @@ static std::map<std::string, std::unique_ptr<PrototypeAST>> FunctionProtos;
 static std::unique_ptr<DIBuilder> DBuilder;
 
 static DISubroutineType *CreateFunctionType(unsigned NumArgs) ;
+
+#endif

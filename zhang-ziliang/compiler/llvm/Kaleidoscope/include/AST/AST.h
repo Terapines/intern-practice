@@ -17,12 +17,14 @@
 #include <string>
 #include <vector>
 
+#ifndef _AST_H
+#define _AST_H
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//
 // Abstract Syntax Tree (aka Parse Tree)
 //===----------------------------------------------------------------------===//
-
+// namespace {
 
 raw_ostream &indent(raw_ostream &O, int size) ;
 
@@ -31,7 +33,7 @@ class ExprAST {
   SourceLocation Loc;
 
 public:
-  ExprAST(SourceLocation Loc);
+  ExprAST(SourceLocation Loc = CurLoc);
   virtual ~ExprAST();
   virtual Value *codegen() = 0;
   int getLine() const ;
@@ -169,3 +171,6 @@ public:
   Function *codegen();
   raw_ostream &dump(raw_ostream &out, int ind) ;
 };
+// } // end anonymous namespace
+
+#endif
