@@ -1,4 +1,7 @@
-#include "../lexer/lexer.h"
+
+#ifndef _AST_H
+#define _AST_H
+#include "lexer.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
@@ -17,8 +20,7 @@
 #include <string>
 #include <vector>
 
-#ifndef _AST_H
-#define _AST_H
+
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//

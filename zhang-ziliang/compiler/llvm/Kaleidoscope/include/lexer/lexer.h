@@ -1,3 +1,6 @@
+#ifndef _LEXER_H
+#define _LEXER_H
+
 #include <iostream>
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
@@ -16,8 +19,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#ifndef _LEXER_H
-#define _LEXER_H
+
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//

@@ -1,4 +1,8 @@
-#include "../AST/AST.h"
+
+#ifndef _PARSER_H
+#define _PARSER_H
+
+#include "AST.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
@@ -17,8 +21,6 @@
 #include <string>
 #include <vector>
 
-#ifndef _PARSER_H
-#define _PARSER_H
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//

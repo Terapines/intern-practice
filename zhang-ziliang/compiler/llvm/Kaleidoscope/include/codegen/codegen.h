@@ -1,4 +1,6 @@
-#include "../parser/parser.h"
+#ifndef _CODEGEN_H
+#define _CODEGEN_H
+#include "parser.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
@@ -16,8 +18,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#ifndef _CODEGEN_H
-#define _CODEGEN_H
+
 using namespace llvm;
 
 //===----------------------------------------------------------------------===//
