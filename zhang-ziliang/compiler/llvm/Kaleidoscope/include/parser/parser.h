@@ -2,7 +2,7 @@
 #ifndef _PARSER_H
 #define _PARSER_H
 
-#include "AST.h"
+#include "AST/AST.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"

@@ -1,6 +1,6 @@
 #ifndef _CODEGEN_H
 #define _CODEGEN_H
-#include "parser.h"
+#include "parser/parser.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/Passes.h"
